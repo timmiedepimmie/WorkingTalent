@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <style>
+     </style> 
+
+     <script>
+       function doeIets(){
+           letter = bepaalLetter();
+           var invoer = document.getElementById("invoer1").value;
+           
+           if(invoer.includes(letter)){
+               aantalKeer = telLetter(letter, invoer);
+               console.log("Ik tel nu de letter " + aantalKeer + " keer");
+               alert("De letter " + letter + " zit " + aantalKeer + " keer in het woord " + invoer)
+           }
+       }
+
+       function bepaalLetter(){
+           var letter = document.getElementById("invoer2").value;
+           if (letter != ""){
+               return letter
+           }else{
+               return "e"
+           }
+       }
+
+       function telLetter(letter, invoer){
+           var aantal = 0;
+           for (var i = 0; i < invoer.length; i++){
+               char = invoer[i];
+               if (char == letter){
+                   aantal++;
+               }
+           }
+           return aantal;
+       }
+  
+      </script>
+  </head>
+
+  <body>
+    <p>Opdracht 3: "HOE VAAK ER EEN E IN?"</p>
+    <p>Voer hier je woord in:</p>
+    <input type=text id=invoer1>
+    <p>Voer hier de letter in die je wilt tellen. Mits leeg, dan word de 'e' geteld</p>
+    <input type=text id=invoer2>
+    <input type=button value="klik hier" onclick="doeIets()">
+
+  </body>
+</html>

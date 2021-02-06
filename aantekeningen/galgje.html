@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var woord = "boek";
+    var woordmask = [0,0,0,0];
+
+    window.onload = bordtekenen;
+    
+    
+    function bordtekenen(){
+      document.getElementById("streepjes").innerHTML = "Welkom bij galgje <br>";
+      for(var nee = 0 ; nee < woord.length ; nee++){
+        if(woordmask[nee] == 0){
+          document.getElementById("streepjes").innerHTML += " _";
+        }else{
+          document.getElementById("streepjes").innerHTML += " "+woord[nee];
+
+        }
+      }
+      if(!woordmask.includes(0)){
+        alert("gewonnen");
+      }
+
+    }
+    function geefLetterDoor(){
+      var letter = document.getElementById("invoer").value;
+      console.log(letter);
+      if(woord.includes(letter)){
+        var geradenletter = woord.indexOf(letter);
+      }else{
+        alert("nope");
+
+      }
+      console.log(geradenletter);
+      woordmask[geradenletter] = 1;
+      console.log(woordmask);
+      bordtekenen();
+    }
+  </script>
+</head>
+<body>
+  <div id=streepjes>iets</div>
+  <input type="text" id="invoer" >
+  <input type="button" value="Geef Letter door" onclick="geefLetterDoor()">
+  <div>aantlevens : 10</div>
+</body>
+</html>

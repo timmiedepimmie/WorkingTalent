@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <style>
+      body{
+        color:blue;
+        background-color:green;
+      }
+      input{
+        border:3px solid purple
+      }
+      .klasseA{
+        font-size: larger;
+        background-color: aquamarine;
+      }
+      .blokje{
+        background-color: red;
+        display: inline-block;  /*inline kleurt niet de hele breedte*/
+        width: 80px;
+        height: 80px;
+      }
+     </style> 
+
+     <script>
+       window.onload = function(){
+         
+       }
+
+       function geefMelding(){
+         alert("Hier is een gratis melding! :) Geniet ervan.")
+       }
+
+       function geefKwadraat(){
+         var getal = document.getElementById("invoer").value;  // getal uitlezen
+         kwad = getal*getal
+         // alert("Het kwadraat is " + kwad)
+         console.log("Het kwadraad is berekend")
+         var resultaat = document.getElementById("uitkomst") // nieuwe variabele maken om te schrijven
+         resultaat.innerHTML = "Het kwadraat is: " + kwad // .innerHTML betekent: schrijf dit bij "uitkomst" voor de </p>
+       }
+       
+       var dansen = {}
+       dansen.naam = "dansen"
+       dansen.tijdsduur = 30
+       var hardlopen = {}
+       hardlopen.naam = "hardlopen"
+       hardlopen.tijdsduur = 20
+       
+       function doeActiviteit(actie){
+         // console.log("Ik ga nu " + actie.naam + " en dat duurt " + actie.tijdsduur + " minuten")
+         output = document.getElementById("schrijfActiviteit")
+         output.innerHTML = "Ik ga nu " + actie.naam + " en dat duurt " + actie.tijdsduur + " minuten" 
+       }
+
+       function printAlfabet(){
+         output = document.getElementById("schrijfAlfabet");
+         output.innerHTML = ""
+         var alfabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+         for (var i = 0; i < alfabet.length; i++){
+           var letter = alfabet[i];
+           output.innerHTML += letter;
+         }
+       }
+
+       var randomArray = [];
+
+       function printOpScherm(outputValue, outputID){
+         document.getElementById(outputID).innerHTML = outputValue
+       }
+
+       function geefRandomArray(){
+         var arraytje = [];
+         for (var i = 0; i < 15; i++){
+           var x = Math.floor(Math.random() * 50);
+           randomArray[i] = x;
+         }
+         printOpScherm(randomArray, "schrijfArray")
+       }
+
+       function vindGrotereWaardes(){
+         var getallen = []
+         var i = 0
+         var grenswaarde = document.getElementById("invoerGrens").value;
+         for(var x = 0 ; x < randomArray.length ; x++){
+           getal = randomArray[x]
+           if (getal > grenswaarde) {
+             getallen[i] = getal
+             i++
+          }
+        }
+          printOpScherm(getallen, "schrijfGrotere")
+      }
+
+       function kleurveranderen(blok){
+         // var blok = document.getElementById(blok_id);
+         blok.style.backgroundColor = 'orange';
+
+         // hokjes = document.getElementsByClassName("blokje") // geeft een array
+       }
+      </script>
+  </head>
+
+  <body>
+    Welkom kijkers
+    <p onclick="geefMelding()"> Klik hier voor een gratis melding </p>
+
+    <p> Voer hieronder een waarde in: </p>
+    <input type=text id=invoer>
+    <input type=button value="klik hier voor het kwadraat" onclick="geefKwadraat()">
+    <p id=uitkomst>    </p>
+
+    <p> Met de volgende 2 knoppen kan je een activiteit doen: </p>
+    <input type=button value="klik hier om te dansen" onclick="doeActiviteit(dansen)">
+    <input type=button value="klik hier om te hardlopen" onclick="doeActiviteit(hardlopen)">
+    <p id=schrijfActiviteit>    </p>
+
+    <div class="klasseA"> <h2>Na de break</h2>
+      <input type=button value="Klik hier voor het alfabet" onclick="printAlfabet()">
+      <p id=schrijfAlfabet>    </p>
+
+      <h3>Willekeurige array</h3>
+      <input type=button value="Klik hier voor een array!" onclick="geefRandomArray()">
+      <p id=schrijfArray></p>
+      <p>Geef een grenswaarde: </p>
+      <input type=text id=invoerGrens>
+      <input type=button value="Vind waardes in de array boven deze grens!" onclick="vindGrotereWaardes()">
+      <p id=schrijfGrotere></p>
+    </div>
+
+    <div id=check1 class=blokje onclick="kleurveranderen(this)"> a </div>
+
+  </body>
+</html>

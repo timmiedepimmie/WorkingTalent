@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+     </style> 
+
+     <script>
+         var klikgeschiedenis = [];
+         
+        function registreerKlik(knop){
+            var letter = knop.value;
+            klikgeschiedenis.push(letter);
+
+            var output = document.getElementById("schrijfHier")
+            var tekst = "";
+            for (var i = 0; i < klikgeschiedenis.length; i++){
+                tekst += "U heeft op knop " + klikgeschiedenis[i] + " geklikt <br>";
+            }
+            output.innerHTML = tekst
+        }
+  
+      </script>
+  </head>
+
+  <body>
+    <p>Opdracht 4: "OP WELKE KNOPPEN IS ER EIGENLIJK GEKLIKT?"</p>
+    <input type=button value="A" onclick="registreerKlik(this)">
+    <input type=button value="B" onclick="registreerKlik(this)">
+    <input type=button value="C" onclick="registreerKlik(this)">
+    <input type=button value="D" onclick="registreerKlik(this)">
+    <div id=schrijfHier></div>
+  </body>
+</html>
