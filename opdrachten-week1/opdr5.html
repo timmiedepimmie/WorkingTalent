@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <style>
+     </style> 
+
+     <script>
+         var klikgeschiedenis = [];
+         
+        function registreerKlik(knop){
+            var letter = knop.value;
+            doorzoekGeschiedenis(letter);
+
+            klikgeschiedenis.push(letter);
+            
+            var output = document.getElementById("schrijfHier")
+            var tekst = "";
+            for (var i = 0; i < klikgeschiedenis.length; i++){
+                tekst += "U heeft op knop " + klikgeschiedenis[i] + " geklikt <br>";
+            }
+            output.innerHTML = tekst            
+        }
+
+        function doorzoekGeschiedenis(letter){
+            var aantal = 0;
+            for (var i = 0; i < klikgeschiedenis.length; i++){
+                if (klikgeschiedenis[i] == letter){
+                    aantal++;
+                }
+            }
+            if (klikgeschiedenis.includes(letter)){
+                alert("U heeft al " + aantal + " keer op " + letter + " geklikt");
+            }
+        }
+  
+      </script>
+  </head>
+
+  <body>
+    <p>Opdracht 5: "OP IEDERE KNOP MAG MAAR 1 KEER GEKLIKT WORDEN!"</p>
+    <input type=button value="A" onclick="registreerKlik(this)">
+    <input type=button value="B" onclick="registreerKlik(this)">
+    <input type=button value="C" onclick="registreerKlik(this)">
+    <input type=button value="D" onclick="registreerKlik(this)">
+    <div id=schrijfHier></div>
+  </body>
+</html>
