@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <style>
+     </style> 
+
+     <script>
+         var seizoen = 0;         
+
+        function volgendeFoto(foto){
+            var nieuweFoto;
+            if (seizoen % 4 == 0){
+                nieuweFoto = "Winter.jpg"
+            }else if(seizoen % 4 == 1){
+                nieuweFoto = "Lente.jpg"
+            }else if(seizoen % 4 == 2){
+                nieuweFoto = "Zomer.jpg"
+            }else if(seizoen % 4 == 3){
+                nieuweFoto = "Herfst.jpg"
+            }
+
+            document.getElementById("myImage").src = nieuweFoto;
+            telJaren();
+            seizoen++;
+        }
+
+        function telJaren(){
+            jaartal = Math.floor ( seizoen / 4);
+            console.log("Er zijn " + jaartal + " jaren verstreken.")
+
+            var output = document.getElementById("schrijfHier")
+            output.innerHTML = "Er zijn " + jaartal + " jaren voorbij."
+        }
+            
+      </script>
+  </head>
+
+  <body>
+    <p>Opdracht 6: "VIER SEIZOENEN, VIER AFBEELDINGEN!"</p>
+    <img id="myImage" src="Herfst.jpg" style="width:1000px" onclick=volgendeFoto()>
+
+    <div id=schrijfHier>Er zijn 0 jaren voorbij.</div>
+
+
+  </body>
+</html>
