@@ -33,7 +33,7 @@
             document.getElementById(fotoID).src = nieuweFoto;
         }
 
-        function checkDezelfde(){
+        function vergelijk(){
             if ((seizoenA % 4) == (seizoenB % 4)){
                 console.log("HETZELFDE")
             }else{
@@ -50,7 +50,7 @@
 
     <input type=button value="KNA" onclick="volgendeFoto(this)">
     <input type=button value="KNB" onclick="volgendeFoto(this)">
-    <input type=button value="KNC" onclick="checkDezelfde()">
+    <input type=button value="KNC" onclick="vergelijk()">
 
 
   </body>

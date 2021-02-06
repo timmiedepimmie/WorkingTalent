@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <style>
+     </style> 
+
+     <script>
+         var seizoen = 0;
+
+        function volgendeFoto(){
+            var nieuweFoto;
+            if (seizoen % 4 == 0){
+                nieuweFoto = "Winter.jpg"
+            }else if(seizoen % 4 == 1){
+                nieuweFoto = "Lente.jpg"
+            }else if(seizoen % 4 == 2){
+                nieuweFoto = "Zomer.jpg"
+            }else if(seizoen % 4 == 3){
+                nieuweFoto = "Herfst.jpg"
+            }
+
+            document.getElementById("AFBA").src = nieuweFoto;
+            seizoen++;
+            checkLente();
+        }
+
+        function checkLente(){
+            if (seizoen % 4 == 2){
+                document.getElementById("AFBB").src = "lammetje.jpg";
+            } else{
+                document.getElementById("AFBB").src = "koeien.jpg";
+            }
+        }
+      </script>
+  </head>
+
+  <body>
+    <p>Opdracht 8: "DE LENTE BEGINT!?"</p>
+    <img id="AFBA" src="Herfst.jpg" style="width:500px" onclick=volgendeFoto()>
+    <img id="AFBB" src="koeien.jpg" style="width:500px">
+  </body>
+</html>
