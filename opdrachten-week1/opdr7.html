@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+     </style> 
+
+     <script>
+         var seizoenA = 0;
+         var seizoenB = 0;          
+
+        function volgendeFoto(knop){
+            var seizoen;
+            var fotoID;
+            if (knop.value == "KNA"){
+                seizoen = seizoenA;
+                fotoID = "AFBA"
+                seizoenA++;
+            } else{
+                seizoen = seizoenB;
+                fotoID = "AFBB"
+                seizoenB++;
+            }
+            var nieuweFoto;
+            if (seizoen % 4 == 0){
+                nieuweFoto = "Winter.jpg"
+            }else if(seizoen % 4 == 1){
+                nieuweFoto = "Lente.jpg"
+            }else if(seizoen % 4 == 2){
+                nieuweFoto = "Zomer.jpg"
+            }else if(seizoen % 4 == 3){
+                nieuweFoto = "Herfst.jpg"
+            }
+
+            document.getElementById(fotoID).src = nieuweFoto;
+        }
+
+        function checkDezelfde(){
+            if ((seizoenA % 4) == (seizoenB % 4)){
+                console.log("HETZELFDE")
+            }else{
+                console.log("NIET HETZELFDE")
+            }
+        }
+      </script>
+  </head>
+
+  <body>
+    <p>Opdracht 7: "ZIJN DE AFBEELDINGEN HETZELFDE?"</p>
+    <img id="AFBA" src="Herfst.jpg" style="width:500px">
+    <img id="AFBB" src="Herfst.jpg" style="width:500px">
+
+    <input type=button value="KNA" onclick="volgendeFoto(this)">
+    <input type=button value="KNB" onclick="volgendeFoto(this)">
+    <input type=button value="KNC" onclick="checkDezelfde()">
+
+
+  </body>
+</html>
