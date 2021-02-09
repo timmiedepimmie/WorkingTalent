@@ -22,6 +22,9 @@ class mainProgramma {
 		
 		MiniOpdracht6 opdr6 = new MiniOpdracht6();
 		opdr6.sorteerLetters();
+		
+		MiniOpdracht7 opdr7 = new MiniOpdracht7();
+		opdr7.speelLingo();
 	}
 }
 
