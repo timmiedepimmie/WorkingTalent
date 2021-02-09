@@ -16,6 +16,9 @@ class mainProgramma {
 		
 		MiniOpdracht4 opdr4 = new MiniOpdracht4();
 		opdr4.start();
+		
+		MiniOpdracht5 opdr5 = new MiniOpdracht5();
+		opdr5.repareerAutos();
 	}
 }
 
