@@ -7,12 +7,15 @@ class mainProgramma {
 		opdr1.plakSamen();
 		
 		MiniOpdracht2 opdr2 = new MiniOpdracht2();
-		String woord = "tekenen";
-		System.out.println(opdr2.telEs(woord) + " e's zitten in het woord " + woord);
+		String woord = "hottentottententententoonstelling";
+		opdr2.telEs(woord);
 		
 		MiniOpdracht3 opdr3 = new MiniOpdracht3();
 		int[] arraytje = {4, 6, 8, 2, 4};
-		System.out.println(opdr3.telArrayOp(arraytje) + " is de som van " + Arrays.toString(arraytje));
+		opdr3.telArrayOp(arraytje);
+		
+		MiniOpdracht4 opdr4 = new MiniOpdracht4();
+		opdr4.start();
 	}
 }
 

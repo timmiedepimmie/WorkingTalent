@@ -1,6 +1,6 @@
 
 public class MiniOpdracht2 {
-	int telEs(String invoer) {
+	void telEs(String invoer) {
 		int aantalE = 0;
 		for (int i=0; i<invoer.length(); i++) {
 			char letter = invoer.charAt(i);
@@ -8,6 +8,7 @@ public class MiniOpdracht2 {
 				aantalE++;
 			}
 		}
-		return aantalE;
+		System.out.println(aantalE + " e's zitten in het woord " + invoer);
+		return;
 	}
 }
