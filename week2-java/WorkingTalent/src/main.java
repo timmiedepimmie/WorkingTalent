@@ -20,11 +20,14 @@ class mainProgramma {
 		MiniOpdracht5 opdr5 = new MiniOpdracht5();
 		opdr5.repareerAutos();
 		
-		MiniOpdracht6 opdr6 = new MiniOpdracht6();
-		opdr6.sorteerLetters();
+		//MiniOpdracht6 opdr6 = new MiniOpdracht6();
+		//opdr6.sorteerLetters();
 		
-		MiniOpdracht7 opdr7 = new MiniOpdracht7();
-		opdr7.speelLingo();
+		//MiniOpdracht7 opdr7 = new MiniOpdracht7();
+		//opdr7.speelLingo();
+		
+		MiniOpdracht8 opdr8 = new MiniOpdracht8();
+		opdr8.start();
 	}
 }
 
