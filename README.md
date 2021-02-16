@@ -1,3 +1,3 @@
 # WorkingTalent
 
-De Java Kermis opdracht kan gevonden worden in WorkingTalent/week2-java/WorkingTalent/src/Kermis/
+De Java Kermis opdracht kan gevonden worden in ./week2-java/WorkingTalent/src/Kermis/
